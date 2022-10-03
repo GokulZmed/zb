@@ -1,0 +1,253 @@
+{
+	"failover":{
+		"enable" : false,
+		"server_url": ["http://65.1.98.241"],
+		"rtsp_url" : ["http://172.21.1.107:4000"]
+	},
+	"device_driver": {
+		"server_url": "http://65.1.98.241:3500",
+		"api_server_url": "http://65.1.98.241:4500",
+		"rtsp_url": "http://65.1.98.241:4000",
+		"iot_port": 8899,
+		"db_save_interval": 30,
+		"logging" :{
+			"level" : "DEBUG",
+			"console" : true,
+			"file" : false
+		},
+		"storage": {
+			"enable": true,
+			"location": "/etc/zb/zm/zStorage",
+			"file_transfer" : {
+				"enable" : true,
+				"address" : "192.168.0.4",
+				"username" : "353532407d",
+				"password" : "353532406c94ee2a126d"
+			}
+		},
+		"datasave" : {
+			"location" : "/etc/zb/zm/zStorage",
+			"mount" : "",
+			"backup" : true
+		},
+		"sync" : {
+			"location" : "/etc/zb/zm/zSync",
+			"enable" : true,
+			"type" : 1,
+			"interval" : 5,
+			"backup" : false
+		},
+		"socketio":{
+			"authentication" : true,
+			"encryption" : true
+		},
+
+		"monitor": {
+			"philips": {
+				"command": "",
+				"io_start_port": 6000,
+				"io_count": 2,
+				"auto_ip" : true,
+                                "interface" : "wlo1",
+                                "udp_server_ip": "172.21.1.107",
+				"server": {
+
+					"ip": "172.21.1.107",
+					"port": 9000
+				},
+				"connection": {
+					"ip": "0.0.0.0",
+					"port": 24005
+				},
+				"data": {
+
+					"ip": "172.21.1.107",
+					"port": 24105
+				},
+				"io": {
+					"port": 6000,
+					"length": 50
+
+				},
+				"broadcast": {
+					"enable": true
+				},
+				"multicast": {
+					"enable": false,
+					"address": "224.0.23.63"
+				},
+				"logging": {
+					"console": true,
+					"file": true
+				},
+				"serial" :{
+					"98D8639EF4F6": "172.21.1.86"
+				}
+			},
+			"mindray": {
+				"tcp_port": 4601,
+				"request_count": 5,
+				"devices": {
+					"98d86321390a": "192.168.0.22"
+				}
+
+			},
+
+			"nihonkohden": {
+				"Sever_IP": "192.168.1.127",
+				"max_connection": 100,
+				"Gateway_IP": "192.168.1.132",
+				"based_on_app" : {
+					"enable" : true,
+					"icu" : [
+						"60c82f0bd38210857476797c"
+					]
+				},
+				"port": {
+					"patient_info": 7997,
+					"patient_list": 9007,
+					"vitals": 7998,
+					"events": 6998,
+					"recent": 7999,
+					"realtime_wave": 9001,
+					"storage": 9003
+
+
+				},
+
+
+				"setting": {
+					"timezone": "+0530",
+					"location": "/etc/zb/zm/zStorage/ecg12lead",
+					"interval": {
+						"storage": 5
+					}
+
+				}
+
+
+			},
+			"carescape_s5":{
+				"devices": {
+					"98d86321390a": "127.0.0.1"
+
+				}
+
+			},
+			"ge_bseries": {
+				"devices": {
+					"0009fb72f22f" : "127.0.0.1"
+				}
+			}
+
+		},
+		"ventilator": {
+
+			"macquet": {
+				"log_level": "DEBUG",
+				"log_path": "./",
+				"devices": {
+					"98d86321390a": "192.168.31.197"
+
+				}
+			},
+			"carescape": {
+				"log_level": "DEBUG",
+				"log_path": "./",
+				"devices": {
+					"7891011": {
+						"ip": "10.199.4.170",
+						"version": 1
+					}
+
+				}
+			},
+
+			"hamilton":{
+				"devices": {
+					"123456": "172.16.0.102"
+
+				}
+
+			}
+		},
+
+		"defibrillator" : {
+			"nihonkohden" : {
+				"db_save_interval" : 30,
+				"port" : 7998,
+				"network" : "rescue",
+				"company_name" : "zMed",
+				"system_ver" : "01.04.0004",
+				"server_address" : "",
+				"ssl":{
+					"enabled" : true,
+					"key" : "",
+					"certificate" : ""
+				},
+				"devices" : {
+					"000000000208" :  { "serial" : "00000208", "key" : "53B606C7"   }
+				},
+				"location" : {
+					"vitals" : "/home/sudhan-zbliss/Documents/NK/data/vitals",
+					"ecg12lead" : "/home/sudhan-zbliss/Documents/NK/data/ecg12lead"
+				}
+			},
+
+			"zoll" : {
+				"location" : {
+					"trend" : "/home/gokul/Downloads/zoll/trend",
+					"ecg12lead" : "/home/gokul/Downloads/zoll/ecg12lead"
+				},
+				"interval" : 30,
+				"backup" : true,
+				"auto_emission_interval" : 4,
+				"devices" : {
+					"1119fb72f22f" :  "192.168.1.103"
+				}
+
+			}
+
+		},
+		"gprs" : {
+			"gprs" : {
+
+				"devices" : {
+					"0009fb72f223" :  "192.168.0.105"
+				}
+			}
+
+		},
+
+		"ip_camera" : {
+			"ip" : "192.168.0.101",
+    		"port" : 8200,
+    		"http_port" :  "80",
+    		"server_port" : 8081,
+    		"ws_port" : 9500,
+    		"rtsp" : "rtsp://192.168.1.104:554",
+    		"volume" : 80
+		},
+		"abg" : {
+
+			"gem" : {
+				"address" : "",
+				"port" : 2755
+
+			}
+		},
+		"akash" : {
+			"ip" : "",
+			"port" : {
+				"uromon" : 4445,
+				"syringe" : 4449,
+				"infusion" : 4447
+			}
+		},
+		"fresenius" : {
+			"devices" : {
+					"0009fb72f223" :  "192.10.1.107"
+				}
+		}
+	}
+}
